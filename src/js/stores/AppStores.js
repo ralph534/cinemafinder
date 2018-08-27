@@ -26,3 +26,15 @@ var AppStore = assign( {}, EventEmitter.prototype, {
     this.removeListener('change', callback)
   }
 })
+
+AppDispatcher.register(function(payload){
+  var action = payload.action;
+
+  switch (action.actionType) {
+
+
+  }
+  return true;
+})
+
+module.exports = AppStore;
