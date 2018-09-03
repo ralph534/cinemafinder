@@ -1,9 +1,22 @@
 var React = require('react');
 var createReactClass = require('create-react-class');
 var SearchForm = require('../components/SearchForm');
+var AppStore = require('../stores/AppStores')
+
+
+
+
+
+
+
+
+
 
 
 var App = createReactClass({
+
+
+
     render: function(){
 
     var textStyle = {
@@ -16,7 +29,8 @@ var App = createReactClass({
          <SearchForm />
       </div>
     )
-  }
+  },
+
 
 })
 

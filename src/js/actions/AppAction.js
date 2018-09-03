@@ -4,9 +4,8 @@ var AppConstants = require('../constants/AppConstant');
 
 var AppActions = {
     searchMovies: function(movie){
-      console.log('searching for a movie ' + movie.title)
       AppDispatcher.handleViewAction({
-        actionType: AppConstants.Search_Movies,
+        actionType: AppConstants.SEARCH_MOVIES,
         movie: movie
       })
     }
