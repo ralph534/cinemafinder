@@ -1,4 +1,4 @@
-var AppStore = require('../stores/AppStore');
+var AppStore = require('../stores/AppStores');
 
 
 module.exports = {

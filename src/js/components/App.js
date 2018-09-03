@@ -1,5 +1,6 @@
 var React = require('react');
 var createReactClass = require('create-react-class');
+var SearchForm = require('../components/SearchForm');
 
 
 var App = createReactClass({
@@ -12,7 +13,7 @@ var App = createReactClass({
 
     return(
       <div style={textStyle}>
-         My App
+         <SearchForm />
       </div>
     )
   }
