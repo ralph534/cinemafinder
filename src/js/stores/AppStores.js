@@ -18,12 +18,12 @@ var AppStore = assign( {}, EventEmitter.prototype, {
     this.emit(CHANGE_EVENT)
   },
 
-  addEventListener: function(callback){
-    this.on(CHANGE_EVENT, callback)
+  addChangeListener: function(callback){
+    this.on('change', callback)
   },
 
-  removeEventListener: function(callback){
-    this.removeListener(CHANGE_EVENT, callback)
+  removeChangeListener: function(callback){
+    this.removeListener('change', callback)
   },
 })
 
@@ -31,8 +31,9 @@ AppDispatcher.register(function(payload){
   var action = payload.action;
 
   switch (action.actionType) {
-      case AppConstants.Search_Movies:
-      console.log('searching for a movie ' + action.movie.title);
+      case AppConstants.SEARCH_MOVIES:
+      console.log('searching for a movie ' + action.movie.title)
+      AppAPI.searchMovies(action.movie);
       AppStore.emit(CHANGE_EVENT);
       break;
 
