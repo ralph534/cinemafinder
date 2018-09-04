@@ -1,7 +1,8 @@
 var React = require('react');
 var createReactClass = require('create-react-class');
 var SearchForm = require('../components/SearchForm');
-var AppStore = require('../stores/AppStores')
+var MovieResults = require('../components/MovieResults')
+var AppStore = require('../stores/AppStores');
 
 
 
@@ -9,7 +10,7 @@ var AppStore = require('../stores/AppStores')
 
 function getAppState(){
   return {
-
+     movies: AppStore.getMovieResults()
   }
 }
 
@@ -45,10 +46,13 @@ render: function(){
      var textStyle = {
       textAlign: "center"
     }
+    console.log(this.state.movies)
+
 
     return(
       <div>
          <SearchForm />
+         <MovieResults />
       </div>
     )
   },
