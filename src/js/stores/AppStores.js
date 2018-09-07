@@ -45,6 +45,7 @@ AppDispatcher.register(function(payload){
       AppAPI.searchMovies(action.movie);
       AppStore.emit(CHANGE_EVENT);
       break;
+
       case AppConstants.RECEIVE_MOVIE_RESULTS:
       AppStore.setMovieResults(action.movies)
       AppStore.emit(CHANGE_EVENT);

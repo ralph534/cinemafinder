@@ -1,7 +1,7 @@
 var React = require('react');
 var createReactClass = require('create-react-class');
 var SearchForm = require('../components/SearchForm');
-var MovieResults = require('../components/MovieResults')
+var MovieResults = require('../components/MovieResults');
 var AppStore = require('../stores/AppStores');
 
 
@@ -43,16 +43,18 @@ componentWillUnmount: function(){
 
 
 render: function(){
-     var textStyle = {
-      textAlign: "center"
-    }
+
     console.log(this.state.movies)
 
-
+  if(this.state.movies == ''){
+    var movieResults = '';
+  } else {
+    var movieResults = <MovieResults movies={this.state.movies}/>
+  }
     return(
       <div>
          <SearchForm />
-         <MovieResults />
+         {movieResults}
       </div>
     )
   },
