@@ -2,6 +2,7 @@ var React = require('react');
 var createReactClass = require('create-react-class');
 var SearchForm = require('../components/SearchForm');
 var MovieResults = require('../components/MovieResults');
+var Background = require('../components/Background');
 var AppStore = require('../stores/AppStores');
 
 
@@ -19,6 +20,7 @@ function getAppState(){
 
 
 var App = createReactClass({
+
 
 getInitialState: function(){
   return getAppState();
@@ -44,12 +46,12 @@ componentWillUnmount: function(){
 
 render: function(){
 
-    console.log(this.state.movies)
+
 
   if(this.state.movies == ''){
     var movieResults = '';
   } else {
-    var movieResults = <MovieResults movies={this.state.movies}/>
+    var movieResults = <MovieResults movies={this.state.movies} />
   }
     return(
       <div>
